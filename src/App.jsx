@@ -649,6 +649,19 @@ function App() {
         </motion.section>
       </main>
 
+      <motion.a
+        initial={{ opacity: 0, scale: 0.9, y: 12 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.4 }}
+        whileHover={{ scale: 1.04 }}
+        whileTap={{ scale: 0.96 }}
+        href="tel:+27765199245"
+        aria-label="Call us at 076 519 9245"
+        className="fixed bottom-6 right-4 z-50 rounded-full bg-[rgb(var(--brand))] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(245,158,11,0.35)] transition-all hover:bg-[rgb(var(--brand2))] sm:bottom-8 sm:right-8"
+      >
+        Call us
+      </motion.a>
+
       <Footer />
     </div>
   )
