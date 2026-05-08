@@ -21,7 +21,7 @@
           <div>
             <p className="text-sm font-semibold text-[rgb(var(--fg))]">Contact</p>
             <div className="mt-4 grid gap-2 text-sm text-[rgb(var(--muted))]">
-              <a className="hover:text-[rgb(var(--fg))]" href="mailto:erensthaba@gmail.com">erensthaba@gmail.com</a>
+              <a className="hover:text-[rgb(var(--fg))]" href="mailto:lebo@Mathabaprojects.co.za">lebo@Mathabaprojects.co.za</a>
               <span>076 519 9245</span>
             </div>
           </div>

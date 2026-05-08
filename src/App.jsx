@@ -343,7 +343,7 @@ function App() {
                   <div className="mt-3 grid gap-2 text-sm text-[rgb(var(--muted))]">
                     <div><span className="text-white/80 font-semibold">Cell:</span> 076 519 9245</div>
                     <div><span className="text-white/80 font-semibold">Fax:</span> 086 459 4572</div>
-                    <div><span className="text-white/80 font-semibold">Email:</span> <a className="hover:text-[rgb(var(--fg))] transition-colors" href="mailto:erensthaba@gmail.com">erensthaba@gmail.com</a></div>
+                    <div><span className="text-white/80 font-semibold">Email:</span> <a className="hover:text-[rgb(var(--fg))] transition-colors" href="mailto:lebo@Mathabaprojects.co.za">lebo@Mathabaprojects.co.za</a></div>
                     <div><span className="text-white/80 font-semibold">Contact person:</span> Mr. Erens Lebogang Thaba</div>
                   </div>
                 </div>
@@ -682,7 +682,7 @@ function App() {
                   <div className="mt-8 grid gap-4 text-sm text-[rgb(var(--muted))]">
                     <motion.div whileHover={{ x: 5 }} className="flex items-center gap-3"><span className="text-white/80 font-semibold">Cell:</span> 076 519 9245</motion.div>
                     <motion.div whileHover={{ x: 5 }} className="flex items-center gap-3"><span className="text-white/80 font-semibold">Fax:</span> 086 459 4572</motion.div>
-                    <motion.div whileHover={{ x: 5 }} className="flex items-center gap-3"><span className="text-white/80 font-semibold">Email:</span> <a className="hover:text-[rgb(var(--fg))] transition-colors underline underline-offset-4 decoration-white/20" href="mailto:erensthaba@gmail.com">erensthaba@gmail.com</a></motion.div>
+                    <motion.div whileHover={{ x: 5 }} className="flex items-center gap-3"><span className="text-white/80 font-semibold">Email:</span> <a className="hover:text-[rgb(var(--fg))] transition-colors underline underline-offset-4 decoration-white/20" href="mailto:lebo@Mathabaprojects.co.za">lebo@Mathabaprojects.co.za</a></motion.div>
                     <motion.div whileHover={{ x: 5 }} className="flex items-center gap-3"><span className="text-white/80 font-semibold">Contact person:</span> Mr. Erens Lebogang Thaba</motion.div>
                   </div>
                 </div>
@@ -692,7 +692,7 @@ function App() {
                     <motion.a
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      href="mailto:erensthaba@gmail.com"
+                      href="mailto:lebo@Mathabaprojects.co.za"
                       className="rounded-full bg-[rgb(var(--brand))] px-8 py-5 text-sm font-semibold text-white text-center shadow-lg hover:shadow-[rgb(var(--brand)/0.2)] transition-all"
                     >
                       Email us
