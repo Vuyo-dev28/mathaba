@@ -35,9 +35,9 @@ export default function Navbar() {
                   <div className="grid h-10 w-10 place-items-center rounded-2xl border border-white/10 bg-white/5 text-sm font-semibold uppercase tracking-[0.3em] text-[rgb(var(--fg))] shadow-inner">
                     M
                   </div>
-                  <div className="hidden sm:block">
-                    <p className="text-[10px] uppercase tracking-[0.32em] text-[rgb(var(--muted))]">Mathaba TL</p>
-                    <p className="text-sm font-semibold">Construction</p>
+                  <div className="block">
+                    <p className="text-[9px] uppercase tracking-[0.2em] text-[rgb(var(--muted))] sm:text-[10px] sm:tracking-[0.32em]">Mathaba TL</p>
+                    <p className="text-xs font-semibold sm:text-sm">Construction</p>
                   </div>
                 </motion.a>
 
