@@ -2,14 +2,12 @@
 @import "tailwindcss";
 
 :root {
-  /* Theme: Professional Slate */
-  /* Lighter variant */
-  --bg: 20 26 36;
-  --fg: 248 250 252;
-  --muted: 186 196 210;
+  --bg: 15 23 42;
+  --fg: 255 255 255;
+  --muted: 148 163 184;
   --stroke: 255 255 255;
-  --brand: 59 130 246;  /* blue */
-  --brand2: 14 165 233; /* sky */
+  --brand: 245 158 11;
+  --brand2: 217 119 6;
 }
 
 html {
@@ -20,6 +18,7 @@ body {
   background: rgb(var(--bg));
   color: rgb(var(--fg));
   font-family: Manrope, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  min-height: 100vh;
 }
 
 .glow-bg {
@@ -27,21 +26,52 @@ body {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(1200px 700px at 15% 10%, rgba(59, 130, 246, 0.14) 0%, transparent 62%),
-    radial-gradient(900px 600px at 85% 20%, rgba(14, 165, 233, 0.11) 0%, transparent 58%),
-    radial-gradient(1000px 700px at 50% 115%, rgba(59, 130, 246, 0.09) 0%, transparent 58%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.055), transparent 38%);
+    radial-gradient(circle at 18% 12%, rgba(var(--brand), 0.18), transparent 18%),
+    radial-gradient(circle at 84% 10%, rgba(255, 255, 255, 0.08), transparent 16%),
+    radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.02), transparent 40%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.95));
+  animation: pulseGlow 14s ease-in-out infinite;
+}
+
+.hero-glow {
+  position: absolute;
+  inset-x: 0;
+  top: 0;
+  height: 32rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(var(--brand), 0.18), transparent 24%),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.06), transparent 20%);
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 0;
+  filter: blur(1px);
+  animation: pulseGlow 12s ease-in-out infinite;
 }
 
 .glass {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.25) inset, 0 18px 70px rgba(0,0,0,0.45);
-  backdrop-filter: blur(14px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(15, 23, 42, 0.75));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 80px -40px rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(18px);
+}
+
+.text-glow {
+  text-shadow: 0 10px 30px rgba(255, 159, 46, 0.12);
 }
 
 ::selection {
-  background: rgba(59, 130, 246, 0.28);
+  background: rgba(var(--brand), 0.16);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.88;
+  }
+  50% {
+    transform: translateY(4px) scale(1.02);
+    opacity: 0.72;
+  }
 }
 
 /* Smooth transitions */
@@ -68,8 +98,8 @@ body {
   background: conic-gradient(
     from 210deg,
     rgba(var(--brand), 0.0),
-    rgba(var(--brand), 0.70),
-    rgba(var(--brand2), 0.70),
+    rgba(var(--brand), 0.50),
+    rgba(var(--brand2), 0.45),
     rgba(var(--brand), 0.0)
   );
   opacity: 0;
