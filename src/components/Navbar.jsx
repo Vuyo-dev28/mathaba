@@ -32,8 +32,12 @@ export default function Navbar() {
                   whileHover={{ scale: 1.05 }}
                   className="flex items-center gap-3 text-[rgb(var(--fg))]"
                 >
-                  <div className="grid h-10 w-10 place-items-center rounded-2xl border border-white/10 bg-white/5 text-sm font-semibold uppercase tracking-[0.3em] text-[rgb(var(--fg))] shadow-inner">
-                    M
+                  <div className="grid h-10 w-10 place-items-center overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-inner">
+                    <img
+                      src="/images/gallery/Mathaba_logo.png"
+                      alt="Mathaba TL Construction logo"
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                   <div className="block">
                     <p className="text-[9px] uppercase tracking-[0.2em] text-[rgb(var(--muted))] sm:text-[10px] sm:tracking-[0.32em]">Mathaba TL</p>

@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../comingSoon.css'
-import logo from '../../public/heyta_logo.png' // 👈 add your logo here
+import logo from '../../public/images/gallery/Mathaba_logo.png'
 
 const ComingSoon = () => {
     return (
