@@ -1,131 +1,66 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+
 const ClientLogos = () => {
+  const handleImageError = (event) => {
+    event.currentTarget.src = '/images/gallery/gallery-01.png'
+  }
+
   const clients = [
-    { name: "Hitachi", image: "/images/hitachi_logo.png", showName: false },
-    { name: "Mago", image: "/images/mago_logo.png", showName: false },
-    { name: "Marthinusen & Coutts", image: "/images/mandc_logo.png", showName: true },
-    { name: "QUEENS NEST FARMS", image: "/images/queens_logo.png", showName: true },
+    { name: "Hitachi", image: "/images/gallery/gallery-10.png", showName: false },
+    { name: "Mago", image: "/images/gallery/gallery-11.png", showName: false },
+    { name: "Marthinusen & Coutts", image: "/images/gallery/gallery-12.png", showName: true },
+    { name: "QUEENS NEST FARMS", image: "/images/gallery/gallery-13.png", showName: true },
   ];
 
   return (
-    <section className="client-logos-section">
-      <div className="container">
-        <p className="clients-title ">TRUSTED BY INDUSTRY LEADERS</p>
-        <div className="marquee-container">
-          <motion.div
-            className="marquee-track"
-            animate={{
-              x: ["0%", "-50%"]
-            }}
-            transition={{
-              duration: 30,
-              ease: "linear",
-              repeat: Infinity
-            }}
-          >
-            {[...clients, ...clients, ...clients, ...clients].map((client, index) => (
-              <div key={index} className="client-logo">
-                <img src={client.image} alt={client.name} className="client-logo-img" />
-                {client.showName && <span className="client-name">{client.name}</span>}
-              </div>
-            ))}
-          </motion.div>
+    <section className="py-12 border-y border-white/5 bg-white/[0.02] overflow-hidden">
+      <div className="mx-auto max-w-6xl px-6">
+        <motion.p 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-[rgb(var(--muted))] mb-10"
+        >
+          Trusted by Industry Leaders
+        </motion.p>
+        
+        <div className="relative">
+          {/* Gradients to fade edges */}
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[rgb(var(--bg))] to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[rgb(var(--bg))] to-transparent z-10 pointer-events-none" />
+          
+          <div className="flex overflow-hidden">
+            <motion.div
+              className="flex gap-20 items-center whitespace-nowrap"
+              animate={{
+                x: ["0%", "-50%"]
+              }}
+              transition={{
+                duration: 40,
+                ease: "linear",
+                repeat: Infinity
+              }}
+            >
+              {[...clients, ...clients, ...clients, ...clients].map((client, index) => (
+                <div key={index} className="flex items-center gap-4 group cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                  <img 
+                    src={client.image} 
+                    alt={client.name} 
+                    className="h-12 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-300" 
+                    onError={handleImageError}
+                  />
+                  {client.showName && (
+                    <span className="text-lg font-bold text-[rgb(var(--fg))] tracking-tight group-hover:text-[rgb(var(--brand))] transition-colors">
+                      {client.name}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
-      <style jsx>{`
-        .client-logos-section {
-          padding: 80px 0;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-          background: #f5f5f5;
-          overflow: hidden;
-        }
-        .clients-title {
-          text-align: center;
-          font-size: 0.875rem;
-          font-weight: 700;
-          letter-spacing: 0.2em;
-          color: #2a2a2a;
-          margin-bottom: 40px;
-        }
-        .marquee-container {
-          width: 100%;
-          overflow: hidden;
-          position: relative;
-        }
-        /* Fade edges for smooth entry/exit */
-        .marquee-container::before,
-        .marquee-container::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          width: 150px;
-          height: 100%;
-          z-index: 2;
-        }
-        .marquee-container::before {
-          left: 0;
-          background: linear-gradient(to right, #f5f5f5, transparent);
-        }
-        .marquee-container::after {
-          right: 0;
-          background: linear-gradient(to left, #f5f5f5, transparent);
-        }
-        .marquee-track {
-          display: flex;
-          gap: 100px;
-          width: fit-content;
-        }
-        .client-logo {
-          display: flex;
-          align-items: center;
-          gap: 16px;
-          min-width: max-content;
-          cursor: pointer;
-        }
-        .client-logo-img {
-          height: 85px;
-          width: auto;
-          object-fit: contain;
-          filter: brightness(0.9);
-          opacity: 0.8;
-          transition: all 0.3s ease;
-        }
-        .client-name {
-          font-weight: 700;
-          font-size: 1.5rem;
-          color: #2a2a2a;
-          opacity: 0.8;
-          transition: all 0.3s ease;
-        }
-        .client-logo:hover .client-logo-img {
-          filter: brightness(1);
-          opacity: 1;
-        }
-        .client-logo:hover .client-name {
-          color: #E11D48;
-          opacity: 1;
-        }
-        
-        @media (max-width: 768px) {
-          .client-logos-section {
-            padding: 60px 0;
-          }
-          .marquee-track {
-            gap: 50px;
-          }
-          .client-logo-img {
-            height: 50px;
-          }
-          .client-name {
-            font-size: 1.125rem;
-          }
-          .marquee-container::before,
-          .marquee-container::after {
-            width: 80px;
-          }
-        }
-      `}</style>
     </section>
   );
 };
