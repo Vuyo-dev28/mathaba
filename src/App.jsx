@@ -52,6 +52,23 @@ const additionalServices = [
   },
 ]
 
+const coreBusinessItems = [
+  'Renewable energy',
+  'Electrical',
+  'ICT Equipments',
+  'Network points',
+  'Microsoft',
+]
+
+const sectorItems = [
+  'Security',
+  'Construction',
+  'Marketing',
+  'Cleaning',
+  'Data and networking',
+  'General trading',
+]
+
 const galleryImages = Array.from({ length: 44 }, (_, index) => ({
   src: `/images/gallery/gallery-${String(index + 1).padStart(2, '0')}.png`,
   alt: `Mathaba project gallery image ${index + 1}`,
@@ -344,9 +361,7 @@ function App() {
                   <motion.div whileHover={{ scale: 1.02 }} className="rounded-3xl border border-white/10 bg-white/5 p-6 transition-transform">
                     <p className="text-sm font-semibold">Business classification</p>
                     <div className="mt-3 grid gap-2 text-sm text-[rgb(var(--muted))]">
-                      <div><span className="text-white/80 font-semibold">Core business:</span> Marketing, Construction, General Trading and Projects</div>
                       <div><span className="text-white/80 font-semibold">Type:</span> (PTY) LTD</div>
-                      <div><span className="text-white/80 font-semibold">Sector:</span> Security, Cleaning and General Trading</div>
                       <div><span className="text-white/80 font-semibold">SMME:</span> Micro</div>
                     </div>
                   </motion.div>
@@ -382,6 +397,55 @@ function App() {
                 </motion.details>
               </motion.div>
             </div>
+
+          </div>
+        </motion.section>
+
+        <motion.section
+          id="business-focus"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="py-16"
+        >
+          <div className="mx-auto max-w-6xl px-6">
+            <motion.div
+              variants={fadeInUp}
+              whileHover={{ backgroundColor: "rgba(255,255,255,0.02)" }}
+              className="rounded-[2rem] border border-white/10 bg-white/5 p-8 sm:p-10 transition-colors"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[rgb(var(--muted))]">Business focus</p>
+              <h2 className="mt-3 font-[Fraunces] text-3xl tracking-tight sm:text-4xl">Core business & sectors</h2>
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-[rgb(var(--muted))]">
+                These are the main areas we operate in and deliver services for across projects.
+              </p>
+
+              <div className="mt-8 grid gap-6 sm:grid-cols-2">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[rgb(var(--muted))]">Core business</p>
+                  <ul className="mt-4 grid gap-3 text-base text-[rgb(var(--muted))]">
+                    {coreBusinessItems.map((item) => (
+                      <li key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                        <span className="h-2 w-2 rounded-full bg-[rgb(var(--brand2))]" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[rgb(var(--muted))]">Sector</p>
+                  <ul className="mt-4 grid gap-3 text-base text-[rgb(var(--muted))]">
+                    {sectorItems.map((item) => (
+                      <li key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                        <span className="h-2 w-2 rounded-full bg-[rgb(var(--brand2))]" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.section>
 
